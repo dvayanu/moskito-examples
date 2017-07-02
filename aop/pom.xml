@@ -16,7 +16,19 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.4</version>
+                <version>1.8</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjrt</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
                 <configuration>
                     <aspectLibraries>
                         <aspectLibrary>
@@ -24,8 +36,9 @@
                             <artifactId>moskito-aop</artifactId>
                         </aspectLibrary>
                     </aspectLibraries>
-                    <source>1.6</source>
-                    <target>1.6</target>
+					<complianceLevel>1.8</complianceLevel>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
                 <executions>
                     <execution>
